@@ -1,5 +1,6 @@
 from room import Room
 from player import Player
+from item import Item
 
 # Declare all the rooms
 
@@ -34,6 +35,7 @@ room['narrow'].w_to = room['foyer']
 room['narrow'].n_to = room['treasure']
 room['treasure'].s_to = room['narrow']
 
+
 #
 # Main
 #
@@ -52,7 +54,9 @@ player = Player(input("Enter player's name:  "), room["outside"])
 # If the user enters "q", quit the game.
 
 while True:
+
     cmd = input("select direction: (n, s, w, e) => ").lower()
+
     if cmd in ["n", "e", "s", "w"]:
         player.travel(cmd)
     elif cmd == "q":
